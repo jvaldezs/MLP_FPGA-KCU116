@@ -1,0 +1,970 @@
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.121 seconds; current allocated memory: 0.543 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 18.922 seconds; peak allocated memory: 682.516 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.07 seconds; current allocated memory: 676.285 MB.
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/mlp_optimized.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 8.545 seconds; current allocated memory: 677.781 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.584 seconds; current allocated memory: 678.230 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.004 seconds; current allocated memory: 678.230 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.274 seconds; current allocated memory: 746.531 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.135 seconds; current allocated memory: 749.551 MB.
+INFO: [XFORM 203-102] Automatically partitioning small array 'output_vector' (../../../../HLS_Export/mlp_optimized.cpp:48) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'output_vector' (../../../../HLS_Export/mlp_optimized.cpp:48) in dimension 1 completely.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.108 seconds; current allocated memory: 767.336 MB.
+WARNING: [HLS 200-960] Cannot flatten loop 'L1_Neurons' (../../../../HLS_Export/mlp_optimized.cpp:33:23) in function 'MLP_Forward_Pass' the outer loop is not a perfect loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'L2_Neurons' (../../../../HLS_Export/mlp_optimized.cpp:50:26) in function 'MLP_Forward_Pass' the outer loop is not a perfect loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'encoded_vector' (../../../../HLS_Export/mlp_optimized.cpp:43:27)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.281 seconds; current allocated memory: 798.781 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'MLP_Forward_Pass' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L1_DotProduct'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' (loop 'L1_DotProduct'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_2_write_ln41', ../../../../HLS_Export/mlp_optimized.cpp:41) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:41 on local variable 'sum' and 'load' operation ('sum_2_load', ../../../../HLS_Export/mlp_optimized.cpp:41) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' (loop 'L1_DotProduct'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_2_write_ln41', ../../../../HLS_Export/mlp_optimized.cpp:41) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:41 on local variable 'sum' and 'load' operation ('sum_2_load', ../../../../HLS_Export/mlp_optimized.cpp:41) on local variable 'sum'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 11, loop 'L1_DotProduct'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.273 seconds; current allocated memory: 802.766 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.124 seconds; current allocated memory: 804.246 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L2_DotProduct'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' (loop 'L2_DotProduct'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_write_ln53', ../../../../HLS_Export/mlp_optimized.cpp:53) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:55 on local variable 'sum' and 'load' operation ('sum_load_1', ../../../../HLS_Export/mlp_optimized.cpp:55) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' (loop 'L2_DotProduct'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_write_ln53', ../../../../HLS_Export/mlp_optimized.cpp:53) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:55 on local variable 'sum' and 'load' operation ('sum_load_1', ../../../../HLS_Export/mlp_optimized.cpp:55) on local variable 'sum'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 9, loop 'L2_DotProduct'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.186 seconds; current allocated memory: 804.355 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.118 seconds; current allocated memory: 804.355 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Softmax_Exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_exp_write_ln62', ../../../../HLS_Export/mlp_optimized.cpp:62) of variable 'sum_exp', ../../../../HLS_Export/mlp_optimized.cpp:65 on local variable 'sum_exp' and 'load' operation ('sum_exp_load', ../../../../HLS_Export/mlp_optimized.cpp:65) on local variable 'sum_exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_exp_write_ln62', ../../../../HLS_Export/mlp_optimized.cpp:62) of variable 'sum_exp', ../../../../HLS_Export/mlp_optimized.cpp:65 on local variable 'sum_exp' and 'load' operation ('sum_exp_load', ../../../../HLS_Export/mlp_optimized.cpp:65) on local variable 'sum_exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln62', ../../../../HLS_Export/mlp_optimized.cpp:62) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:64 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:64) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln62', ../../../../HLS_Export/mlp_optimized.cpp:62) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:64 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:64) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln62', ../../../../HLS_Export/mlp_optimized.cpp:62) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:64 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:64) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 9, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln62', ../../../../HLS_Export/mlp_optimized.cpp:62) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:64 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:64) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 10, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln62', ../../../../HLS_Export/mlp_optimized.cpp:62) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:64 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:64) on local variable 'output_vector[1]'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 11, Depth = 16, loop 'Softmax_Exp'
+WARNING: [HLS 200-871] Estimated clock period (10.105ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+WARNING: [HLS 200-1016] The critical path in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' consists of the following:	'dexp' operation ('tmp', ../../../../HLS_Export/mlp_optimized.cpp:64) [32]  (7.21 ns)
+	'fptrunc' operation ('output_vector[0]', ../../../../HLS_Export/mlp_optimized.cpp:64) [33]  (2.89 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.333 seconds; current allocated memory: 805.273 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.189 seconds; current allocated memory: 805.445 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Softmax_Norm'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' (loop 'Softmax_Norm'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln71', ../../../../HLS_Export/mlp_optimized.cpp:71) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:74 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load', ../../../../HLS_Export/mlp_optimized.cpp:74) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' (loop 'Softmax_Norm'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln71', ../../../../HLS_Export/mlp_optimized.cpp:71) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:74 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load', ../../../../HLS_Export/mlp_optimized.cpp:74) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' (loop 'Softmax_Norm'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln71', ../../../../HLS_Export/mlp_optimized.cpp:71) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:74 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load', ../../../../HLS_Export/mlp_optimized.cpp:74) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' (loop 'Softmax_Norm'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln71', ../../../../HLS_Export/mlp_optimized.cpp:71) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:74 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load', ../../../../HLS_Export/mlp_optimized.cpp:74) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' (loop 'Softmax_Norm'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln71', ../../../../HLS_Export/mlp_optimized.cpp:71) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:74 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load', ../../../../HLS_Export/mlp_optimized.cpp:74) on local variable 'output_vector[1]'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 8, Depth = 12, loop 'Softmax_Norm'
+WARNING: [HLS 200-871] Estimated clock period (7.895ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+WARNING: [HLS 200-1016] The critical path in module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' consists of the following:	'fdiv' operation ('val', ../../../../HLS_Export/mlp_optimized.cpp:73) [34]  (7.06 ns)
+	'select' operation ('output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:74) [35]  (0.411 ns)
+	'store' operation ('output_vector_1_1_write_ln71', ../../../../HLS_Export/mlp_optimized.cpp:71) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:74 on local variable 'output_vector[1]' [55]  (0.427 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.321 seconds; current allocated memory: 805.824 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.175 seconds; current allocated memory: 805.883 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.178 seconds; current allocated memory: 806.461 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.157 seconds; current allocated memory: 806.801 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' pipeline 'L1_DotProduct' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_L1_DotProduct'.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_MLP_Forward_Pass_Pipeline_L1_DotProduct_W1_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.806 seconds; current allocated memory: 902.344 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' pipeline 'L2_DotProduct' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_L2_DotProduct'.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_MLP_Forward_Pass_Pipeline_L2_DotProduct_W2_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.288 seconds; current allocated memory: 902.344 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' pipeline 'Softmax_Exp' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dexp_64ns_64ns_64_10_med_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptrunc_64ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_Softmax_Exp'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.251 seconds; current allocated memory: 902.344 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' pipeline 'Softmax_Norm' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_9_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_Softmax_Norm'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.25 seconds; current allocated memory: 902.344 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-500] Setting interface mode on port 'MLP_Forward_Pass/input_vector' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'MLP_Forward_Pass' to 'ap_ctrl_hs'.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass'.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_b1_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_b2_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'MLP_Forward_Pass_encoded_vector_RAM_2P_URAM_1R1W' using ultra RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.415 seconds; current allocated memory: 902.344 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.032 seconds; current allocated memory: 902.344 MB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.661 seconds; current allocated memory: 902.344 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for MLP_Forward_Pass.
+INFO: [VLOG 209-307] Generating Verilog RTL for MLP_Forward_Pass.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 98.96 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 4 seconds. CPU system time: 1 seconds. Elapsed time: 18.907 seconds; current allocated memory: 226.070 MB.
+INFO: [HLS 200-112] Total CPU user time: 7 seconds. Total CPU system time: 2 seconds. Total elapsed time: 32.757 seconds; peak allocated memory: 902.344 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 4.018 seconds; current allocated memory: 0.316 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 18.749 seconds; peak allocated memory: 677.430 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.066 seconds; current allocated memory: 676.816 MB.
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/mlp_optimized.cpp' ... 
+ERROR: [HLS 207-5500] Invalid Directive: for current device, rom_np + uram is invalid combination for BIND_STORAGE's option 'type + impl' (../../../../HLS_Export/mlp_optimized.cpp:13:43)
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.381 seconds; current allocated memory: 0.254 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 15.27 seconds; peak allocated memory: 677.078 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.071 seconds; current allocated memory: 677.078 MB.
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/mlp_optimized.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 8.6 seconds; current allocated memory: 677.641 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+ERROR: [HLS 214-221] Global/static variable '_ZL2W1' with bind_storage implementation 'ram_1p_uram' cannot be initialized.
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 11.966 seconds; current allocated memory: 1.301 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 25.729 seconds; peak allocated memory: 678.301 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 3.599 seconds; current allocated memory: 0.359 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 2 seconds. Total elapsed time: 19.8 seconds; peak allocated memory: 681.953 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 43.274 seconds; current allocated memory: 0.312 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 2 seconds. Total elapsed time: 58.403 seconds; peak allocated memory: 682.672 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.074 seconds; current allocated memory: 679.660 MB.
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/mlp_optimized.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 133.404 seconds; current allocated memory: 680.500 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'ssdm_int<64, true>::ssdm_int(long)' into 'ap_int_base<64, true>::ap_int_base(long)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:216:68)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi65ELb1EEC2EDq65_i' into 'ap_int_base<65, true>::ap_int_base<11, false>(ap_int_base<11, false> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi65ELb1EEC2EDq65_i' into 'ap_int_base<65, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi65ELb1EEC2EDq65_i' into 'ap_int_base<65, true>::ap_int_base(int)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<11, false>(ap_int_base<11, false> const&)' into 'ap_int_base<11, false>::RType<64, true>::minus operator-<11, false, 64, true>(ap_int_base<11, false> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:341)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base(int)' into 'ap_int_base<11, false>::RType<64, true>::minus operator-<11, false, 64, true>(ap_int_base<11, false> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:520)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' into 'ap_int_base<11, false>::RType<64, true>::minus operator-<11, false, 64, true>(ap_int_base<11, false> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base(long)' into 'ap_int_base<11, false>::RType<($_0)64, true>::minus operator-<11, false>(ap_int_base<11, false> const&, long)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1635:1548)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<11, false>::RType<64, true>::minus operator-<11, false, 64, true>(ap_int_base<11, false> const&, ap_int_base<64, true> const&)' into 'ap_int_base<11, false>::RType<($_0)64, true>::minus operator-<11, false>(ap_int_base<11, false> const&, long)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1635:1546)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi1ELb0EEC2EDq1_j' into 'ap_int_base<1, false>::ap_int_base(int)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi55ELb1EEC2EDq55_i' into 'ap_int_base<55, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi55ELb1EEC2EDq55_i' into 'ap_int_base<55, true>::ap_int_base<54, true>(ap_int_base<54, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi55ELb1EEC2EDq55_i' into 'ap_int_base<55, true>::ap_int_base(int)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<55, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' into 'ap_int_base<1, false>::RType<54, true>::minus operator-<1, false, 54, true>(ap_int_base<1, false> const&, ap_int_base<54, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:341)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<55, true>::ap_int_base(int)' into 'ap_int_base<1, false>::RType<54, true>::minus operator-<1, false, 54, true>(ap_int_base<1, false> const&, ap_int_base<54, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:520)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<55, true>::ap_int_base<54, true>(ap_int_base<54, true> const&)' into 'ap_int_base<1, false>::RType<54, true>::minus operator-<1, false, 54, true>(ap_int_base<1, false> const&, ap_int_base<54, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::ap_int_base(int)' into 'ap_int_base<54, true>::operator-() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:895:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::RType<54, true>::minus operator-<1, false, 54, true>(ap_int_base<1, false> const&, ap_int_base<54, true> const&)' into 'ap_int_base<54, true>::operator-() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:895:37)
+INFO: [HLS 214-131] Inlining function 'doubleToRawBits(double)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:545:14)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<54, true>& ap_int_base<54, true>::operator=<55, true>(ap_int_base<55, true> const&)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:559:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<54, true>::operator-() const' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:559:22)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>& ap_int_base<12, true>::operator=<65, true>(ap_int_base<65, true> const&)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:552:9)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<11, false>::RType<($_0)64, true>::minus operator-<11, false>(ap_int_base<11, false> const&, long)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:552:19)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<32, false>::ssdm_int(unsigned int)' into 'ap_int_base<32, false>::ap_int_base(unsigned long)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:217:77)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, false>::ap_int_base(unsigned long)' into 'ap_int_base<16, false>::countLeadingZeros() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1196:30)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, false>::countLeadingZeros() const' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_float() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:1097:17)
+INFO: [HLS 214-131] Inlining function 'rawBitsToFloat(unsigned long)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_float() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:1126:12)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_float() const' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:1181:73)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' into 'MLP_Forward_Pass(float*, ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (../../../../HLS_Export/mlp_optimized.cpp:36:28)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' into 'MLP_Forward_Pass(float*, ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (../../../../HLS_Export/mlp_optimized.cpp:53:16)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' into 'MLP_Forward_Pass(float*, ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (../../../../HLS_Export/mlp_optimized.cpp:49:28)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' into 'MLP_Forward_Pass(float*, ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (../../../../HLS_Export/mlp_optimized.cpp:40:16)
+INFO: [HLS 214-115] Multiple burst reads of length 300000 and bit width 16 in loop 'Load_W1'(../../../../HLS_Export/mlp_optimized.cpp:21:18) has been inferred on bundle 'gmem_weights'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (../../../../HLS_Export/mlp_optimized.cpp:21:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 15.26 seconds; current allocated memory: 681.824 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 681.824 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.143 seconds; current allocated memory: 697.648 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:1102: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.141 seconds; current allocated memory: 709.238 MB.
+INFO: [XFORM 203-102] Automatically partitioning small array 'output_vector' (../../../../HLS_Export/mlp_optimized.cpp:46) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'output_vector' (../../../../HLS_Export/mlp_optimized.cpp:46) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../HLS_Export/mlp_optimized.cpp:39:9) to (../../../../HLS_Export/mlp_optimized.cpp:38:24) in function 'MLP_Forward_Pass'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../HLS_Export/mlp_optimized.cpp:35:23) to (../../../../HLS_Export/mlp_optimized.cpp:38:42) in function 'MLP_Forward_Pass'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../HLS_Export/mlp_optimized.cpp:52:9) to (../../../../HLS_Export/mlp_optimized.cpp:51:24) in function 'MLP_Forward_Pass'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../HLS_Export/mlp_optimized.cpp:48:26) to (../../../../HLS_Export/mlp_optimized.cpp:51:42) in function 'MLP_Forward_Pass'... converting 10 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.305 seconds; current allocated memory: 743.832 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'Load_W1' (../../../../HLS_Export/mlp_optimized.cpp:21:27) in function 'MLP_Forward_Pass'.
+WARNING: [HLS 200-960] Cannot flatten loop 'L1_Neurons' (../../../../HLS_Export/mlp_optimized.cpp:35:23) in function 'MLP_Forward_Pass' the outer loop is not a perfect loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'L2_Neurons' (../../../../HLS_Export/mlp_optimized.cpp:48:26) in function 'MLP_Forward_Pass' the outer loop is not a perfect loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'W1_uram.V' (../../../../HLS_Export/mlp_optimized.cpp:24:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'encoded_vector' (../../../../HLS_Export/mlp_optimized.cpp:42:27)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.246 seconds; current allocated memory: 783.730 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'MLP_Forward_Pass' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln24) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'Load_W1_VITIS_LOOP_22_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'Load_W1_VITIS_LOOP_22_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.287 seconds; current allocated memory: 788.629 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.097 seconds; current allocated memory: 790.289 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L1_DotProduct'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' (loop 'L1_DotProduct'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_write_ln40', ../../../../HLS_Export/mlp_optimized.cpp:40) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:40 on local variable 'sum' and 'load' operation ('sum_load', ../../../../HLS_Export/mlp_optimized.cpp:40) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' (loop 'L1_DotProduct'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_write_ln40', ../../../../HLS_Export/mlp_optimized.cpp:40) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:40 on local variable 'sum' and 'load' operation ('sum_load', ../../../../HLS_Export/mlp_optimized.cpp:40) on local variable 'sum'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 12, loop 'L1_DotProduct'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.233 seconds; current allocated memory: 791.984 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.199 seconds; current allocated memory: 792.203 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L2_DotProduct'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' (loop 'L2_DotProduct'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_write_ln51', ../../../../HLS_Export/mlp_optimized.cpp:51) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:53 on local variable 'sum' and 'load' operation ('sum_load_1', ../../../../HLS_Export/mlp_optimized.cpp:53) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' (loop 'L2_DotProduct'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_write_ln51', ../../../../HLS_Export/mlp_optimized.cpp:51) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:53 on local variable 'sum' and 'load' operation ('sum_load_1', ../../../../HLS_Export/mlp_optimized.cpp:53) on local variable 'sum'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 10, loop 'L2_DotProduct'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 793.051 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.162 seconds; current allocated memory: 793.270 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Softmax_Exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_exp_write_ln59', ../../../../HLS_Export/mlp_optimized.cpp:59) of variable 'sum_exp', ../../../../HLS_Export/mlp_optimized.cpp:62 on local variable 'sum_exp' and 'load' operation ('sum_exp_load', ../../../../HLS_Export/mlp_optimized.cpp:62) on local variable 'sum_exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_exp_write_ln59', ../../../../HLS_Export/mlp_optimized.cpp:59) of variable 'sum_exp', ../../../../HLS_Export/mlp_optimized.cpp:62 on local variable 'sum_exp' and 'load' operation ('sum_exp_load', ../../../../HLS_Export/mlp_optimized.cpp:62) on local variable 'sum_exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln59', ../../../../HLS_Export/mlp_optimized.cpp:59) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:61 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:61) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln59', ../../../../HLS_Export/mlp_optimized.cpp:59) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:61 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:61) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln59', ../../../../HLS_Export/mlp_optimized.cpp:59) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:61 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:61) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 9, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln59', ../../../../HLS_Export/mlp_optimized.cpp:59) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:61 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:61) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 10, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln59', ../../../../HLS_Export/mlp_optimized.cpp:59) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:61 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:61) on local variable 'output_vector[1]'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 11, Depth = 16, loop 'Softmax_Exp'
+WARNING: [HLS 200-871] Estimated clock period (10.105ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+WARNING: [HLS 200-1016] The critical path in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' consists of the following:	'dexp' operation ('tmp', ../../../../HLS_Export/mlp_optimized.cpp:61) [32]  (7.21 ns)
+	'fptrunc' operation ('output_vector[0]', ../../../../HLS_Export/mlp_optimized.cpp:61) [33]  (2.89 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.409 seconds; current allocated memory: 793.855 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.177 seconds; current allocated memory: 793.895 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Softmax_Norm'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 12, loop 'Softmax_Norm'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.185 seconds; current allocated memory: 794.316 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 794.324 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.259 seconds; current allocated memory: 795.562 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.335 seconds; current allocated memory: 796.160 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1' pipeline 'Load_W1_VITIS_LOOP_22_1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1/m_axi_gmem_weights_ARUSER' to 0.
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_10ns_9ns_9ns_19_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_22_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.713 seconds; current allocated memory: 798.523 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' pipeline 'L1_DotProduct' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_L1_DotProduct'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.317 seconds; current allocated memory: 801.184 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' pipeline 'L2_DotProduct' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_L2_DotProduct'.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_MLP_Forward_Pass_Pipeline_L2_DotProduct_W2_V_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.562 seconds; current allocated memory: 804.070 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' pipeline 'Softmax_Exp' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dexp_64ns_64ns_64_10_med_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptrunc_64ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_Softmax_Exp'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.515 seconds; current allocated memory: 805.582 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' pipeline 'Softmax_Norm' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_9_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_Softmax_Norm'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.258 seconds; current allocated memory: 806.891 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MLP_Forward_Pass/gmem_weights' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MLP_Forward_Pass/input_vector' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MLP_Forward_Pass/weights_ext' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'MLP_Forward_Pass' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'weights_loaded' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'weights_ext' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass'.
+INFO: [RTMG 210-278] Implementing memory 'MLP_Forward_Pass_W1_uram_V_RAM_1P_URAM_1R1W' using ultra RAMs.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_b1_V_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_b2_V_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'MLP_Forward_Pass_encoded_vector_RAM_2P_URAM_1R1W' using ultra RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.594 seconds; current allocated memory: 812.531 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 1.98 seconds; current allocated memory: 817.641 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 1.002 seconds; current allocated memory: 825.266 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for MLP_Forward_Pass.
+INFO: [VLOG 209-307] Generating Verilog RTL for MLP_Forward_Pass.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 98.96 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 6 seconds. CPU system time: 2 seconds. Elapsed time: 158.5 seconds; current allocated memory: 145.781 MB.
+INFO: [HLS 200-112] Total CPU user time: 9 seconds. Total CPU system time: 3 seconds. Total elapsed time: 172.688 seconds; peak allocated memory: 825.484 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 44.114 seconds; current allocated memory: 0.438 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 58.556 seconds; peak allocated memory: 682.844 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csynth_design 
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.07 seconds; current allocated memory: 677.316 MB.
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/mlp_optimized.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 133.132 seconds; current allocated memory: 678.711 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+INFO: [HLS 214-131] Inlining function 'ssdm_int<64, true>::ssdm_int(long)' into 'ap_int_base<64, true>::ap_int_base(long)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:216:68)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi65ELb1EEC2EDq65_i' into 'ap_int_base<65, true>::ap_int_base<11, false>(ap_int_base<11, false> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi65ELb1EEC2EDq65_i' into 'ap_int_base<65, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi65ELb1EEC2EDq65_i' into 'ap_int_base<65, true>::ap_int_base(int)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<11, false>(ap_int_base<11, false> const&)' into 'ap_int_base<11, false>::RType<64, true>::minus operator-<11, false, 64, true>(ap_int_base<11, false> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:341)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base(int)' into 'ap_int_base<11, false>::RType<64, true>::minus operator-<11, false, 64, true>(ap_int_base<11, false> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:520)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<65, true>::ap_int_base<64, true>(ap_int_base<64, true> const&)' into 'ap_int_base<11, false>::RType<64, true>::minus operator-<11, false, 64, true>(ap_int_base<11, false> const&, ap_int_base<64, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<64, true>::ap_int_base(long)' into 'ap_int_base<11, false>::RType<($_0)64, true>::minus operator-<11, false>(ap_int_base<11, false> const&, long)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1635:1548)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<11, false>::RType<64, true>::minus operator-<11, false, 64, true>(ap_int_base<11, false> const&, ap_int_base<64, true> const&)' into 'ap_int_base<11, false>::RType<($_0)64, true>::minus operator-<11, false>(ap_int_base<11, false> const&, long)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1635:1546)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi1ELb0EEC2EDq1_j' into 'ap_int_base<1, false>::ap_int_base(int)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi55ELb1EEC2EDq55_i' into 'ap_int_base<55, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi55ELb1EEC2EDq55_i' into 'ap_int_base<55, true>::ap_int_base<54, true>(ap_int_base<54, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:185:106)
+INFO: [HLS 214-131] Inlining function '_ZN8ssdm_intILi55ELb1EEC2EDq55_i' into 'ap_int_base<55, true>::ap_int_base(int)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:214:67)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<55, true>::ap_int_base<1, false>(ap_int_base<1, false> const&)' into 'ap_int_base<1, false>::RType<54, true>::minus operator-<1, false, 54, true>(ap_int_base<1, false> const&, ap_int_base<54, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:341)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<55, true>::ap_int_base(int)' into 'ap_int_base<1, false>::RType<54, true>::minus operator-<1, false, 54, true>(ap_int_base<1, false> const&, ap_int_base<54, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:520)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<55, true>::ap_int_base<54, true>(ap_int_base<54, true> const&)' into 'ap_int_base<1, false>::RType<54, true>::minus operator-<1, false, 54, true>(ap_int_base<1, false> const&, ap_int_base<54, true> const&)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1496:430)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::ap_int_base(int)' into 'ap_int_base<54, true>::operator-() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:895:12)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<1, false>::RType<54, true>::minus operator-<1, false, 54, true>(ap_int_base<1, false> const&, ap_int_base<54, true> const&)' into 'ap_int_base<54, true>::operator-() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:895:37)
+INFO: [HLS 214-131] Inlining function 'doubleToRawBits(double)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:545:14)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<54, true>& ap_int_base<54, true>::operator=<55, true>(ap_int_base<55, true> const&)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:559:20)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<54, true>::operator-() const' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:559:22)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<12, true>& ap_int_base<12, true>::operator=<65, true>(ap_int_base<65, true> const&)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:552:9)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<11, false>::RType<($_0)64, true>::minus operator-<11, false>(ap_int_base<11, false> const&, long)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::ap_fixed_base(double)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:552:19)
+INFO: [HLS 214-131] Inlining function 'ssdm_int<32, false>::ssdm_int(unsigned int)' into 'ap_int_base<32, false>::ap_int_base(unsigned long)' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:217:77)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<32, false>::ap_int_base(unsigned long)' into 'ap_int_base<16, false>::countLeadingZeros() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_int_base.h:1196:30)
+INFO: [HLS 214-131] Inlining function 'ap_int_base<16, false>::countLeadingZeros() const' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_float() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:1097:17)
+INFO: [HLS 214-131] Inlining function 'rawBitsToFloat(unsigned long)' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_float() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:1126:12)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::to_float() const' into 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' (C:/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot\ap_fixed_base.h:1181:73)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' into 'MLP_Forward_Pass(float*, ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (../../../../HLS_Export/mlp_optimized.cpp:37:28)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' into 'MLP_Forward_Pass(float*, ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (../../../../HLS_Export/mlp_optimized.cpp:54:16)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' into 'MLP_Forward_Pass(float*, ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (../../../../HLS_Export/mlp_optimized.cpp:50:28)
+INFO: [HLS 214-131] Inlining function 'ap_fixed_base<16, 4, true, (ap_q_mode)5, (ap_o_mode)3, 0>::operator float() const' into 'MLP_Forward_Pass(float*, ap_fixed<16, 4, (ap_q_mode)5, (ap_o_mode)3, 0>*)' (../../../../HLS_Export/mlp_optimized.cpp:41:16)
+INFO: [HLS 214-248] Applying array_reshape to '_ZZ16MLP_Forward_PassPfP8ap_fixedILi16ELi4EL9ap_q_mode5EL9ap_o_mode3ELi0EEE7W1_uram': Cyclic reshaping with factor 4 on dimension 2. (../../../../HLS_Export/mlp_optimized.cpp:11:0)
+INFO: [HLS 214-115] Multiple burst reads of length 300000 and bit width 16 in loop 'Load_W1'(../../../../HLS_Export/mlp_optimized.cpp:22:18) has been inferred on bundle 'gmem_weights'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (../../../../HLS_Export/mlp_optimized.cpp:22:18)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 14.608 seconds; current allocated memory: 679.867 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 679.867 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.085 seconds; current allocated memory: 694.891 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-23] ../../../../HLS_Export/mlp_optimized.cpp:25: variable-indexed range selection may cause suboptimal QoR.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.121 seconds; current allocated memory: 706.926 MB.
+INFO: [XFORM 203-102] Automatically partitioning small array 'output_vector' (../../../../HLS_Export/mlp_optimized.cpp:47) completely based on array size.
+INFO: [XFORM 203-101] Partitioning array 'output_vector' (../../../../HLS_Export/mlp_optimized.cpp:47) in dimension 1 completely.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../HLS_Export/mlp_optimized.cpp:40:9) to (../../../../HLS_Export/mlp_optimized.cpp:39:24) in function 'MLP_Forward_Pass'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../HLS_Export/mlp_optimized.cpp:36:23) to (../../../../HLS_Export/mlp_optimized.cpp:39:42) in function 'MLP_Forward_Pass'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../HLS_Export/mlp_optimized.cpp:53:9) to (../../../../HLS_Export/mlp_optimized.cpp:52:24) in function 'MLP_Forward_Pass'... converting 10 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (../../../../HLS_Export/mlp_optimized.cpp:49:26) to (../../../../HLS_Export/mlp_optimized.cpp:52:42) in function 'MLP_Forward_Pass'... converting 10 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.277 seconds; current allocated memory: 740.562 MB.
+INFO: [XFORM 203-541] Flattening a loop nest 'Load_W1' (../../../../HLS_Export/mlp_optimized.cpp:22:27) in function 'MLP_Forward_Pass'.
+WARNING: [HLS 200-960] Cannot flatten loop 'L1_Neurons' (../../../../HLS_Export/mlp_optimized.cpp:36:23) in function 'MLP_Forward_Pass' the outer loop is not a perfect loop.
+WARNING: [HLS 200-960] Cannot flatten loop 'L2_Neurons' (../../../../HLS_Export/mlp_optimized.cpp:49:26) in function 'MLP_Forward_Pass' the outer loop is not a perfect loop.
+INFO: [HLS 200-472] Inferring partial write operation for 'MLP_Forward_Pass(float*, ap_fixed<16, 4, 5, 3, 0>*)W1_uram' (../../../../HLS_Export/mlp_optimized.cpp:25:16)
+INFO: [HLS 200-472] Inferring partial write operation for 'encoded_vector' (../../../../HLS_Export/mlp_optimized.cpp:43:27)
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.206 seconds; current allocated memory: 780.738 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'MLP_Forward_Pass' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [HLS 200-486] Changing DSP latency (root=mul_ln25) to 3 in order to utilize available DSP registers.
+INFO: [SCHED 204-61] Pipelining loop 'Load_W1_VITIS_LOOP_23_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 5, loop 'Load_W1_VITIS_LOOP_23_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 0.234 seconds; current allocated memory: 785.152 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.088 seconds; current allocated memory: 786.387 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L1_DotProduct'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' (loop 'L1_DotProduct'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_write_ln41', ../../../../HLS_Export/mlp_optimized.cpp:41) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:41 on local variable 'sum' and 'load' operation ('sum_load', ../../../../HLS_Export/mlp_optimized.cpp:41) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' (loop 'L1_DotProduct'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_write_ln41', ../../../../HLS_Export/mlp_optimized.cpp:41) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:41 on local variable 'sum' and 'load' operation ('sum_load', ../../../../HLS_Export/mlp_optimized.cpp:41) on local variable 'sum'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 12, loop 'L1_DotProduct'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.242 seconds; current allocated memory: 787.910 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.195 seconds; current allocated memory: 788.160 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'L2_DotProduct'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' (loop 'L2_DotProduct'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_write_ln52', ../../../../HLS_Export/mlp_optimized.cpp:52) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:54 on local variable 'sum' and 'load' operation ('sum_load_1', ../../../../HLS_Export/mlp_optimized.cpp:54) on local variable 'sum'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' (loop 'L2_DotProduct'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_write_ln52', ../../../../HLS_Export/mlp_optimized.cpp:52) of variable 'sum', ../../../../HLS_Export/mlp_optimized.cpp:54 on local variable 'sum' and 'load' operation ('sum_load_1', ../../../../HLS_Export/mlp_optimized.cpp:54) on local variable 'sum'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 3, Depth = 10, loop 'L2_DotProduct'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.36 seconds; current allocated memory: 788.781 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.154 seconds; current allocated memory: 789.043 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Softmax_Exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 1, distance = 1, offset = 0) between 'store' operation ('sum_exp_write_ln60', ../../../../HLS_Export/mlp_optimized.cpp:60) of variable 'sum_exp', ../../../../HLS_Export/mlp_optimized.cpp:63 on local variable 'sum_exp' and 'load' operation ('sum_exp_load', ../../../../HLS_Export/mlp_optimized.cpp:63) on local variable 'sum_exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 2, distance = 1, offset = 0) between 'store' operation ('sum_exp_write_ln60', ../../../../HLS_Export/mlp_optimized.cpp:60) of variable 'sum_exp', ../../../../HLS_Export/mlp_optimized.cpp:63 on local variable 'sum_exp' and 'load' operation ('sum_exp_load', ../../../../HLS_Export/mlp_optimized.cpp:63) on local variable 'sum_exp'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 3, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln60', ../../../../HLS_Export/mlp_optimized.cpp:60) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:62 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:62) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 4, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln60', ../../../../HLS_Export/mlp_optimized.cpp:60) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:62 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:62) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 7, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln60', ../../../../HLS_Export/mlp_optimized.cpp:60) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:62 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:62) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 9, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln60', ../../../../HLS_Export/mlp_optimized.cpp:60) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:62 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:62) on local variable 'output_vector[1]'.
+WARNING: [HLS 200-880] The II Violation in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' (loop 'Softmax_Exp'): Unable to enforce a carried dependence constraint (II = 10, distance = 1, offset = 0) between 'store' operation ('output_vector_1_write_ln60', ../../../../HLS_Export/mlp_optimized.cpp:60) of variable 'output_vector[1]', ../../../../HLS_Export/mlp_optimized.cpp:62 on local variable 'output_vector[1]' and 'load' operation ('output_vector_1_load_1', ../../../../HLS_Export/mlp_optimized.cpp:62) on local variable 'output_vector[1]'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 11, Depth = 16, loop 'Softmax_Exp'
+WARNING: [HLS 200-871] Estimated clock period (10.105ns) exceeds the target (target clock period: 10ns, clock uncertainty: 2.7ns, effective delay budget: 7.3ns).
+WARNING: [HLS 200-1016] The critical path in module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' consists of the following:	'dexp' operation ('tmp_8', ../../../../HLS_Export/mlp_optimized.cpp:62) [32]  (7.21 ns)
+	'fptrunc' operation ('output_vector[0]', ../../../../HLS_Export/mlp_optimized.cpp:62) [33]  (2.89 ns)
+
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.398 seconds; current allocated memory: 789.441 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.161 seconds; current allocated memory: 789.445 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Softmax_Norm'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 12, loop 'Softmax_Norm'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.172 seconds; current allocated memory: 790.121 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.13 seconds; current allocated memory: 790.305 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'MLP_Forward_Pass' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.236 seconds; current allocated memory: 791.531 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.323 seconds; current allocated memory: 791.914 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1' pipeline 'Load_W1_VITIS_LOOP_23_1' pipeline type 'loop pipeline'
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARVALID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARADDR' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARID' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARLEN' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARSIZE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARBURST' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARLOCK' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARCACHE' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARPROT' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARQOS' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARREGION' to 0.
+WARNING: [RTGEN 206-101] Setting dangling out port 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1/m_axi_gmem_weights_ARUSER' to 0.
+INFO: [RTGEN 206-100] Generating core module 'mac_muladd_10ns_7ns_7ns_17_4_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_Load_W1_VITIS_LOOP_23_1'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.701 seconds; current allocated memory: 794.199 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_L1_DotProduct' pipeline 'L1_DotProduct' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_L1_DotProduct'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.317 seconds; current allocated memory: 797.137 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_L2_DotProduct' pipeline 'L2_DotProduct' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_L2_DotProduct'.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_MLP_Forward_Pass_Pipeline_L2_DotProduct_W2_V_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.612 seconds; current allocated memory: 799.902 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_Softmax_Exp' pipeline 'Softmax_Exp' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'dexp_64ns_64ns_64_10_med_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fpext_32ns_64_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fptrunc_64ns_32_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_Softmax_Exp'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.489 seconds; current allocated memory: 801.566 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'MLP_Forward_Pass_Pipeline_Softmax_Norm' pipeline 'Softmax_Norm' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fdiv_32ns_32ns_32_9_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass_Pipeline_Softmax_Norm'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.243 seconds; current allocated memory: 802.867 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'MLP_Forward_Pass' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MLP_Forward_Pass/gmem_weights' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MLP_Forward_Pass/input_vector' to 'ap_memory'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'MLP_Forward_Pass/weights_ext' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'MLP_Forward_Pass' to 'ap_ctrl_hs'.
+WARNING: [RTGEN 206-101] Register 'weights_loaded' is power-on initialization.
+INFO: [RTGEN 206-100] Bundling port 'weights_ext' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'fadd_32ns_32ns_32_4_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fcmp_32ns_32ns_1_2_no_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'fmul_32ns_32ns_32_3_max_dsp_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'MLP_Forward_Pass'.
+INFO: [RTMG 210-278] Implementing memory 'MLP_Forward_Pass_MLP_Forward_Pass_float_ap_fixed_16_4_5_3_0_W1_uram_RAM_1P_URAM_1R1W' using ultra RAMs.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_b1_V_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [RTMG 210-279] Implementing memory 'MLP_Forward_Pass_b2_V_ROM_NP_BRAM_1R' using block ROMs.
+INFO: [RTMG 210-278] Implementing memory 'MLP_Forward_Pass_encoded_vector_RAM_2P_URAM_1R1W' using ultra RAMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 0.512 seconds; current allocated memory: 807.449 MB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 1.896 seconds; current allocated memory: 814.281 MB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 0.956 seconds; current allocated memory: 821.512 MB.
+INFO: [VHDL 208-304] Generating VHDL RTL for MLP_Forward_Pass.
+INFO: [VLOG 209-307] Generating Verilog RTL for MLP_Forward_Pass.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were NOT satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 98.96 MHz
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 7 seconds. CPU system time: 2 seconds. Elapsed time: 157.109 seconds; current allocated memory: 144.336 MB.
+INFO: [HLS 200-112] Total CPU user time: 10 seconds. Total CPU system time: 3 seconds. Total elapsed time: 170.967 seconds; peak allocated memory: 821.641 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 65.068 seconds; current allocated memory: 0.297 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 1 seconds. Total elapsed time: 80.068 seconds; peak allocated memory: 682.336 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 183.643 seconds; current allocated memory: 0.227 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 2 seconds. Total elapsed time: 199.054 seconds; peak allocated memory: 682.961 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: source ./32_bit_model/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name MLP_Forward_Pass MLP_Forward_Pass 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 38.226 seconds; current allocated memory: 0.391 MB.
+INFO: [HLS 200-112] Total CPU user time: 5 seconds. Total CPU system time: 3 seconds. Total elapsed time: 55.522 seconds; peak allocated memory: 680.719 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./32_bit_model/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name MLP_Forward_Pass MLP_Forward_Pass 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 105.321 seconds; current allocated memory: 0.398 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 2 seconds. Total elapsed time: 119.855 seconds; peak allocated memory: 680.332 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./32_bit_model/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name MLP_Forward_Pass MLP_Forward_Pass 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 1 seconds. Elapsed time: 5.111 seconds; current allocated memory: 0.410 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 2 seconds. Total elapsed time: 19.636 seconds; peak allocated memory: 685.676 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./32_bit_model/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name MLP_Forward_Pass MLP_Forward_Pass 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 5.013 seconds; current allocated memory: 0.469 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 19.205 seconds; peak allocated memory: 680.090 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./32_bit_model/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name MLP_Forward_Pass MLP_Forward_Pass 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 6.372 seconds; current allocated memory: 0.254 MB.
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 20.539 seconds; peak allocated memory: 679.984 MB.
+==============================================================
+Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+Tool Version Limit: 2019.12
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+==============================================================
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: source ./32_bit_model/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name MLP_Forward_Pass MLP_Forward_Pass 
+INFO: [HLS 200-1510] Running: csynth_design 
+WARNING: [HLS 200-40] Cannot find source file ../../../../HLS_Export/weights_small_w1_uram.cpp; skipping it.
+WARNING: [HLS 200-40] Cannot find source file ../../../../HLS_Export/weights_small_w1_bram.cpp; skipping it.
+WARNING: [HLS 200-40] Skipped source file 'mnist_test.csv'. Source files must have extensions .c, .C, .cc, .cpp, .c++, .cp, or .cxx.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 10.084 seconds; current allocated memory: 680.098 MB.
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small_w1_uram_3.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small_w1_uram_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small_w1_uram_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small_w1_uram_0.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small_w1_bram_2.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small_w1_bram_1.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small_w1_bram_0.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/weights_small_other.cpp' ... 
+INFO: [HLS 200-10] Analyzing design file '../../../../HLS_Export/mlp_optimized.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 1 seconds. CPU system time: 1 seconds. Elapsed time: 743.294 seconds; current allocated memory: 681.781 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vivado' flow target.
+ERROR: [HLS 200-1715] Encountered problem during source synthesis
+INFO: [HLS 200-111] Finished Command csynth_design CPU user time: 2 seconds. CPU system time: 1 seconds. Elapsed time: 2290.33 seconds; current allocated memory: 1.832 MB.
+INFO: [HLS 200-112] Total CPU user time: 4 seconds. Total CPU system time: 2 seconds. Total elapsed time: 2304.19 seconds; peak allocated memory: 681.781 MB.

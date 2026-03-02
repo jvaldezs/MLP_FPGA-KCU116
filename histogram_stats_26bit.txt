@@ -1,0 +1,22 @@
+W1 (base):
+  Total weights: 3000000
+  Rounded to 0 @ 4-bit  (I=4): 38.3196%
+  Rounded to 0 @ 16-bit (I=4, F=12): 0.0097%
+  Rounded to 0 @ 26-bit (I=4, F=22): 0.0000%
+b1 (bias):
+  Total weights: 10000
+  Rounded to 0 @ 4-bit  (I=4): 8.6300%
+  Rounded to 0 @ 16-bit (I=4, F=12): 0.0100%
+  Rounded to 0 @ 26-bit (I=4, F=22): 0.0000%
+W2 (weights):
+  Total weights: 20000
+  Rounded to 0 @ 4-bit  (I=4): 99.9700%
+  Rounded to 0 @ 16-bit (I=4, F=12): 50.0600%
+  Rounded to 0 @ 26-bit (I=4, F=22): 50.0000%
+b2 (bias2):
+  Total weights: 2
+  Rounded to 0 @ 4-bit  (I=4): 50.0000%
+  Rounded to 0 @ 16-bit (I=4, F=12): 50.0000%
+  Rounded to 0 @ 26-bit (I=4, F=22): 50.0000%
+Histogram saved to: C:\Users\jvald\.gemini\antigravity\brain\6ca50188-560e-4388-be77-63685cb8eff7\weight_histograms.png
+Zoomed histogram saved to: C:\Users\jvald\.gemini\antigravity\brain\6ca50188-560e-4388-be77-63685cb8eff7\weight_histograms_zoom.png

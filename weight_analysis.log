@@ -1,0 +1,28 @@
+--- base.pkl ---
+  Min: -5.114600
+  Max: 5.248264
+  Max Abs: 5.248264
+  Required Integer Bits (signed): 4
+  WARNING: 4-bit width (ap_fixed<4,4>) will cause significant overflow/saturation!
+
+--- bias.pkl ---
+  Min: 0.000052
+  Max: 6.282588
+  Max Abs: 6.282588
+  Required Integer Bits (signed): 4
+  WARNING: 4-bit width (ap_fixed<4,4>) will cause significant overflow/saturation!
+
+--- weights.pkl ---
+  Min: -0.632819
+  Max: 0.329322
+  Max Abs: 0.632819
+  Required Integer Bits (signed): 1
+  If using 4-bit total width: I=1, F=3 (ap_fixed<4, 1>)
+
+--- bias2.pkl ---
+  Min: 0.000000
+  Max: 2.128714
+  Max Abs: 2.128714
+  Required Integer Bits (signed): 3
+  If using 4-bit total width: I=3, F=1 (ap_fixed<4, 3>)
+

@@ -1,0 +1,162 @@
+
+****** Vitis HLS - High-Level Synthesis from C, C++ and OpenCL v2022.2 (64-bit)
+  **** SW Build 3670227 on Oct 13 2022
+  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+
+source C:/Xilinx/Vitis_HLS/2022.2/scripts/vitis_hls/hls.tcl -notrace
+INFO: [HLS 200-10] Running 'C:/Xilinx/Vitis_HLS/2022.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'jvald' on host 'msi' (Windows NT_amd64 version 6.2) on Sat Feb 28 23:56:02 -0800 2026
+INFO: [HLS 200-10] In directory 'C:/Users/jvald/HLS_Export'
+Sourcing Tcl script 'run_csim_only.tcl'
+INFO: [HLS 200-1510] Running: open_project -reset proj_mlp_optimized 
+INFO: [HLS 200-10] Opening and resetting project 'C:/Users/jvald/HLS_Export/proj_mlp_optimized'.
+INFO: [HLS 200-1510] Running: set_top MLP_Forward_Pass 
+INFO: [HLS 200-1510] Running: add_files mlp_optimized.cpp -cflags -std=c++11 
+INFO: [HLS 200-10] Adding design file 'mlp_optimized.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files weights_small_other.cpp -cflags -std=c++11 
+INFO: [HLS 200-10] Adding design file 'weights_small_other.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files mlp.h 
+INFO: [HLS 200-10] Adding design file 'mlp.h' to the project
+INFO: [HLS 200-1510] Running: add_files -tb verification_tb.cpp -cflags -std=c++11 
+INFO: [HLS 200-10] Adding test bench file 'verification_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/jvald/HLS_Export/w1.txt 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/jvald/HLS_Export/w1.txt' to the project
+INFO: [HLS 200-1510] Running: add_files -tb C:/Users/jvald/HLS_Export/mnist_test.csv 
+INFO: [HLS 200-10] Adding test bench file 'C:/Users/jvald/HLS_Export/mnist_test.csv' to the project
+INFO: [HLS 200-1510] Running: open_solution -reset solution1 -flow_target vivado 
+INFO: [HLS 200-10] Creating and opening solution 'C:/Users/jvald/HLS_Export/proj_mlp_optimized/solution1'.
+INFO: [HLS 200-10] Cleaning up the solution database.
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vivado' configuration: config_interface -m_axi_latency=0
+INFO: [HLS 200-1510] Running: set_part xcku5p-ffvb676-2-e 
+INFO: [HLS 200-1611] Setting target device to 'xcku5p-ffvb676-2-e'
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: config_compile -pipeline_loops 0 
+INFO: [HLS 200-1510] Running: csim_design 
+Running Dispatch Server on port: 51459
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../verification_tb.cpp in debug mode
+   Compiling ../../../../weights_small_other.cpp in debug mode
+   Compiling ../../../../mlp_optimized.cpp in debug mode
+   Generating csim.exe
+In file included from C:/Xilinx/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_fpo.h:143,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_fixed.h:9,
+                 from ../../../../weights_small.h:4,
+                 from ../../../../mlp.h:8,
+                 from ../../../../verification_tb.cpp:8:
+C:/Xilinx/Vitis_HLS/2022.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2022.2/include/hls_fpo.h:143:0,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_fixed.h:9,
+                 from ../../../../weights_small.h:4,
+                 from ../../../../mlp.h:8,
+                 from ../../../../verification_tb.cpp:8:
+C:/Xilinx/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+In file included from C:/Xilinx/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_fpo.h:143,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_fixed.h:9,
+                 from ../../../../weights_small.h:4,
+                 from ../../../../weights_small_other.cpp:1:
+C:/Xilinx/Vitis_HLS/2022.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2022.2/include/hls_fpo.h:143:0,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_fixed.h:9,
+                 from ../../../../weights_small.h:4,
+                 from ../../../../weights_small_other.cpp:1:
+C:/Xilinx/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+In file included from C:/Xilinx/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:149:0,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_fpo.h:143,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_fixed.h:9,
+                 from ../../../../weights_small.h:4,
+                 from ../../../../mlp.h:8,
+                 from ../../../../mlp_optimized.cpp:1:
+C:/Xilinx/Vitis_HLS/2022.2/include/gmp.h:58:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from C:/Xilinx/Vitis_HLS/2022.2/include/hls_fpo.h:143:0,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half_fpo.h:18,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/hls_half.h:25,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/etc/ap_private.h:52,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_common.h:666,
+                 from C:/Xilinx/Vitis_HLS/2022.2/include/ap_fixed.h:9,
+                 from ../../../../weights_small.h:4,
+                 from ../../../../mlp.h:8,
+                 from ../../../../mlp_optimized.cpp:1:
+C:/Xilinx/Vitis_HLS/2022.2/include/floating_point_v7_1_bitacc_cmodel.h:141:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+========================================
+VERIFICATION: 6,000 NEURON RUNTIME URAM
+========================================
+Loaded W1 from file.
+Simulating URAM and BRAM Weight Load...
+Sample 1 (Label: 0)
+  Golden Pred: 0 [0.616795, 0.383205]
+  DUT Pred:    1
+  -> MISMATCH!
+----------------------------------------
+Sample 2 (Label: 1)
+  Golden Pred: 0 [0.510303, 0.489697]
+  DUT Pred:    0
+----------------------------------------
+Sample 3 (Label: 0)
+  Golden Pred: 1 [0.0159263, 0.984074]
+  DUT Pred:    1
+----------------------------------------
+Sample 4 (Label: 1)
+  Golden Pred: 1 [2.45495e-005, 0.999975]
+  DUT Pred:    1
+----------------------------------------
+Sample 5 (Label: 0)
+  Golden Pred: 1 [0.00212732, 0.997873]
+  DUT Pred:    1
+----------------------------------------
+
+FINAL RESULTS (Samples: 20)
+Golden Accuracy: 55%
+DUT Accuracy:    70%
+Mismatches:      5
+@E Simulation failed: Function 'main' returns nonzero value '1'.
+ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 15.169 seconds; current allocated memory: 0.719 MB.
+4
+    while executing
+"source run_csim_only.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel \#0 [list source $arg] "
+
+INFO: [HLS 200-112] Total CPU user time: 3 seconds. Total CPU system time: 1 seconds. Total elapsed time: 29.12 seconds; peak allocated memory: 675.480 MB.
+INFO: [Common 17-206] Exiting vitis_hls at Sat Feb 28 23:56:30 2026...
